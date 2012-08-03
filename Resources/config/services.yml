@@ -1,5 +1,5 @@
 parameters:
-    millwright_semaphore.manager.class: Millwright\Semaphore\Model\SemaphoreManager
+    millwright_semaphore.manager.class: Millwright\SemaphoreBundle\Model\SemaphoreManager
     millwright_semaphore.try_count: 5
     millwright_semaphore.sleep_time: 1
     millwright_semaphore.expire_interval: 15
