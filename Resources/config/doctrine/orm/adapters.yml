@@ -1,0 +1,10 @@
+parameters:
+    millwright_semaphore.adapter.class:   Millwright\Semaphore\Adapter\DoctrineORMAdapter
+    millwright_semaphore.semaphore.entity.class: Millwright\SemaphoreBundle\Entity\Semaphore
+
+services:
+    millwright_semaphore.adapter:
+        class: %millwright_semaphore.adapter.class%
+        arguments:
+            - @doctrine.orm.entity_manager
+            - %millwright_semaphore.semaphore.entity.class%
