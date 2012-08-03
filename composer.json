@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "zerkalica/semaphore": "dev-master"
+        "zerkalica/semaphore": "dev-master",
+        "zerkalica/millwright-configuration-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": { "Millwright\\SemaphoreBundle": "" }
