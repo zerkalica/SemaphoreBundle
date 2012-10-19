@@ -1,8 +1,8 @@
 <?php
 namespace Millwright\SemaphoreBundle\Model;
 
-use Millwright\ConfigurationBundle\DateUtil;
-use Millwright\ConfigurationBundle\PhpUtil;
+use Millwright\Util\DateUtil;
+use Millwright\Util\PhpUtil;
 
 /**
  * Semaphore model

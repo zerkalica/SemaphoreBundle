@@ -3,7 +3,7 @@ namespace Millwright\SemaphoreBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
-use Millwright\ConfigurationBundle\Extension;
+use Millwright\Util\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
