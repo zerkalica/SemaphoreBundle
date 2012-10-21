@@ -1,0 +1,14 @@
+parameters:
+    millwright_semaphore.semaphore.entity.class: Millwright\SemaphoreBundle\Entity\Semaphore
+
+services:
+    millwright_semaphore.adapter.apc:
+        class: Millwright\Semaphore\Adapter\ApcAdapter
+
+    millwright_semaphore.adapter.sem:
+        class: Millwright\Semaphore\Adapter\SemAdapter
+
+    millwright_semaphore.adapter.flock:
+        class: Millwright\Semaphore\Adapter\FlockAdapter
+        arguments:
+            - %kernel.cache_dir%

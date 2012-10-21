@@ -17,7 +17,13 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('millwright_semaphore');
+        $treeBuilder->root('millwright_semaphore')
+            ->children()
+                ->scalarNode('adapter')->defaultValue('millwright_semaphore.adapter.apc')->end()
+                ->scalarNode('sleep_time')->defaultValue(1)->end()
+                ->scalarNode('try_count')->defaultValue(5)->end()
+                ->scalarNode('namespace')->defaultValue('millwright_semaphore')->end()
+            ->end();
 
         return $treeBuilder;
     }

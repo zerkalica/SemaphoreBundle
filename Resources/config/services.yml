@@ -2,13 +2,14 @@ parameters:
     millwright_semaphore.manager.class: Millwright\SemaphoreBundle\Model\SemaphoreManager
     millwright_semaphore.try_count: 5
     millwright_semaphore.sleep_time: 1
-    millwright_semaphore.expire_interval: 15
+    millwright_semaphore.adapter: millwright_semaphore.adapter.apc
+    millwright_semaphore.namespace: millwright_semaphore
 
 services:
     millwright_semaphore.manager:
         class: %millwright_semaphore.manager.class%
         arguments:
-            - @millwright_semaphore.adapter
+            - @millwright_semaphore.adapter.apc
             - %millwright_semaphore.try_count%
             - %millwright_semaphore.sleep_time%
-            - %millwright_semaphore.expire_interval%
+            - %millwright_semaphore.namespace%

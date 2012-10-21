@@ -27,4 +27,20 @@ class MillwrightSemaphoreExtension extends Extension
             'adapters.yml',
         );
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $config = parent::load($configs, $container);
+
+        $key = $config['adapter'];
+
+        $adapter = $container->getDefinition($key);
+        $manager = $container->getDefinition('millwright_semaphore.manager');
+        $manager->replaceArgument(0, $adapter);
+
+        return $config;
+    }
 }
