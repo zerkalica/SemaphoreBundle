@@ -16,7 +16,7 @@ class SemaphoreManager extends SemaphoreManagerBase
      *
      * @param string|ObjectIdentityInterface|object $key
      */
-    public function acquire($key)
+    public function acquire($key, $ttl = 60)
     {
         if (is_object($key)) {
             $key = $key instanceof ObjectIdentityInterface
@@ -24,6 +24,6 @@ class SemaphoreManager extends SemaphoreManagerBase
                 : (string) ObjectIdentity::fromDomainObject($key);
         }
 
-        return parent::acquire($key);
+        return parent::acquire($key, $ttl);
     }
 }
